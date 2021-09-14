@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="900.0" maxWidth="900.0" minHeight="900.0" minWidth="900.0" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #0E2F44;">
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#bbc7a4" height="650.0" stroke="BLACK" strokeType="INSIDE" width="650.0" />
+                        <GridPane fx:id="grid" alignment="CENTER" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </center>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+         <top>
+            <VBox prefHeight="152.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="903.0">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="New">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#restart" text="Start new game" />
+                              <MenuItem mnemonicParsing="false" onAction="#newLevel" text="New level" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Game">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#runAI1" text="Solve with AI H1" />
+                              <MenuItem mnemonicParsing="false" onAction="#runAI2" text="Solve with AI H2" />
+                              <MenuItem fx:id="solutionButton" disable="true" mnemonicParsing="false" onAction="#seeNextMoves" text="See next moves" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Exit">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="About">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#about" text="How to Play" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <HBox alignment="CENTER" prefHeight="130.0" prefWidth="900.0">
+                     <children>
+                        <Text fill="ANTIQUEWHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="15 Puzzle">
+                           <font>
+                              <Font name="Consolas" size="77.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
